@@ -1,14 +1,8 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const customRoute = require('./router');
 
-var api = require('./api');
-var apix = new api();
-
-apix.getData();
-
-app.get('/', function (req, res) {
-   res.send('Hello World');
-})
+app.use('/api', customRoute);
 
 var server = app.listen(8081, function () {
    var host = server.address().address

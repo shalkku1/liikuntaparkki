@@ -1,6 +1,7 @@
-var axios = require('axios');
+const axios = require('axios');
+const express = require('express');
 
-class Api {
+class Utils {
 
     getDataMock() {
         return [
@@ -42,4 +43,4 @@ class Api {
     }
 };
 
-module.exports = Api;
+module.exports = Utils;

@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+var api = require('./api');
+var apix = new api();
+
+apix.getData();
 
 app.get('/', function (req, res) {
    res.send('Hello World');

@@ -12,7 +12,14 @@ setInterval(function() {
 
    axios.get('https://liikuntaparkki.fi/?controller=ajax&getentriescount=1&locationId=1', {})
    .then(function(response) {
-      dbConnection.query('INSERT INTO data(date, time, visitors) VALUES ($1, $2, $3)', [d.toLocaleDateString(), h+':'+m, response.data.entriesTotal], (err, res) => {
+      var query = 'INSERT INTO data ("date", "time", "visitors") VALUES ($1,$2,$3);';
+      var params = [d.toLocaleDateString(), h+':'+m, response.data.entriesTotal];
+
+      dbConnection.on('query', function (sql) {
+         console.log(query);
+       });
+
+      dbConnection.query(query, params, (err, res) => {
          if (err) {
             console.log(err.stack)
          } else {

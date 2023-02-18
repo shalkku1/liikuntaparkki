@@ -1,7 +1,8 @@
 const dbConnection = require('.././db');
 
 exports.getData = (request, response) => {
-    dbConnection.query('SELECT date, visitors from data', (err, res) => {
+    
+    dbConnection.query('SELECT date, time, visitors from public.data', (err, res) => {
         if (err) {
             console.log(err.stack)
         } else {

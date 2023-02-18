@@ -33,14 +33,16 @@ class Utils {
     ];
 
     getData() {
-
         return this.data;
+    }
 
+    fetchDataFromLiikuntaparkki() {
         axios.get('https://liikuntaparkki.fi/?controller=ajax&getentriescount=1&locationId=1', {})
         .then(function(response) {
             console.log(response.data);
         });
     }
+
 };
 
 module.exports = Utils;

@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "db": "node db.js",
-    "startdb": "brew services start postgresql",
-    "stopdb": "brew services stop postgresql"
+    "start": "node index.js & node fetchData.js"
   },
   "keywords": [
     "liikuntaparkki"

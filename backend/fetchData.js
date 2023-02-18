@@ -1,7 +1,8 @@
 const axios = require('axios');
 const dbConnection = require('./db');
 
-var minutes = 15, the_interval = minutes * 10 * 1000;
+var minutes = process.env.NODE_ENV === 'production' ? 15: 1;
+var the_interval = minutes * 10 * 1000;
 
 setInterval(function() {
 

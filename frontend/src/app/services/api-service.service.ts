@@ -13,6 +13,6 @@ export class ApiServiceService {
   ) { }
 
   getData(): Observable<dataModel[]> {
-    return this.httpclient.get<dataModel[]>("http://localhost:8081/api/getdata");
+    return this.httpclient.get<dataModel[]>("/api/getdata");
   }
 }

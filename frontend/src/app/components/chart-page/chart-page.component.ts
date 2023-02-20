@@ -44,10 +44,11 @@ export class ChartPageComponent {
   public lineChartLegend = true;
 
   async ngOnInit() {
-    // await this.api.getData().subscribe((response:dataModel[]) => {
-    //   console.log(response);
-    // this.data = response;
-    // })
+     await this.api.getData().subscribe((response:dataModel[]) => {
+      console.log(response);
+      this.data = response;
+    });
+    
     for(let datapoint of this.data) {
       this.visitors.push(datapoint.visitors);
       this.dates.push(datapoint.time);

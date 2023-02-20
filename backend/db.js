@@ -1,6 +1,4 @@
 const { Client } = require('pg')
-
-
     const client = process.env.NODE_ENV === 'production' 
     ? new Client({connectionString: process.env.DATABASE_URL}) 
     : new Client({

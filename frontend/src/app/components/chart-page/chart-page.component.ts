@@ -20,7 +20,7 @@ export class ChartPageComponent {
   title = 'ng2-charts-demo';
   dates: string[] = [];
   visitors: number[] = [];
-  
+
   constructor(private api: ApiServiceService) {
   }
   
@@ -34,14 +34,14 @@ export class ChartPageComponent {
         fill: true,
         tension: 0.5,
         borderColor: 'black',
-        backgroundColor: 'rgba(255,0,0,0.3)'
+        backgroundColor: 'rgb(157, 208, 0)'
       }
     ]
   };
   public lineChartOptions: ChartOptions<'line'> = {
     responsive: false
   };
-  public lineChartLegend = true;
+  public lineChartLegend = false;
 
   async ngOnInit() {
      await this.api.getData().subscribe((response:dataModel[]) => {

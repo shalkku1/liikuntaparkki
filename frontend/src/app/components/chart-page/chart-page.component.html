@@ -1,10 +1,14 @@
 <div class="container">
-    <div style="display: block;">
-        <canvas baseChart width="400" height="400"
-          [type]="'line'"
-          [data]="lineChartData"
-          [options]="lineChartOptions"
-          [legend]="lineChartLegend">
-        </canvas>
-      </div> 
+  <div class="header">
+    <h1>Liikuntaparkki kävijämäärä</h1>
+  </div>
+  <div class="chart">
+      <canvas class="canvas"
+        baseChart height="400"
+        [type]="'line'"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        [legend]="lineChartLegend">
+      </canvas>
+    </div> 
 </div>
